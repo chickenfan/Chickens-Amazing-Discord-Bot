@@ -7,19 +7,21 @@
     "discord.js": "^13.1.0",
     "typescript": "^4.4.3"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "node": "^16.9.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": "git+https://github.com/chickenfan/Chickens-Amazing-Discord-Bot.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chickenfan/Chickens-Amazing-Discord-Bot.git"
+  },
   "author": "chickenfan",
   "license": "GNU GPLv3",
   "bugs": {
     "url": "https://github.com/chickenfan/Chickens-Amazing-Discord-Bot/issues"
   },
   "homepage": "https://github.com/chickenfan/Chickens-Amazing-Discord-Bot#readme",
-  "engines": {
-    "node": "latest",
-    "npm": "latest"
-  }
+  "keywords": []
 }
