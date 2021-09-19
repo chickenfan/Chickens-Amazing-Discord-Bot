@@ -1,9 +1,21 @@
-import Discord from 'discord.js';
+import {Client} from 'discord.js';
 
-const client = new Discord.Client();
+const client = new Client();
 
-client.on("ready", () => {
 
+export default class Utility {
+  getClient(): Client {
+    return client;
+  }
+}
+
+client.on('ready', () => {
+  console.log('Bot up!');
 });
 
-client.login('TOKEN');
+client.on('message', msg => {
+  if (msg.toString() == '!shutdown')
+    client.destroy();
+});
+
+client.login(process.env.TOKEN);
