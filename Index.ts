@@ -1,6 +1,6 @@
-import {Client} from 'discord.js';
+import {Client, GuildMember} from 'discord.js';
 
-import {CommandManager} from "./CommandHandling/CommandManager"
+import CommandManager from "./CommandHandling/CommandManager"
 
 const client = new Client();
 
@@ -18,9 +18,9 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
-  cmdManager.getCommands().foreach(cmd => {
+  cmdManager.getCommands().forEach(cmd => {
     if(msg.toString() == cmd.getCommand())
-      cmd.execute(msg.author);
+      cmd.execute(msg.member as GuildMember);
   });
 });
 

@@ -12,7 +12,7 @@ constructor() {
   execute(member: GuildMember): void {
     var lib = new Lib();
     
-    if (member.has(this.getPerm()))
+    if (member.guild.me!.hasPermission(this.getPerm()))
       lib.getUtility().getClient().destroy();
   }
 }

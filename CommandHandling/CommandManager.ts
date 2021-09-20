@@ -13,6 +13,6 @@ export default class CommandManager {
   }
 
   constructor() {
-    this.addCommand(new ShutdownCommand());
+    this.commands  = [new ShutdownCommand()];
   }
 }

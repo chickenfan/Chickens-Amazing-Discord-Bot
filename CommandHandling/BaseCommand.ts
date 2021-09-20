@@ -3,21 +3,21 @@ import {Permissions, GuildMember} from 'discord.js'
 export default abstract class BaseCommand {
   private command: String;
   private args: String[];
-  private perm: Permissions;
+  private perm: number;
 
-  constructor(command: String, args: String[], perm: String) {
+  constructor(command: String, args: String[], perm: number) {
     this.command = command;
     this.args = args;
     this.perm = perm;
   }
 
-  protected getCommand(): String {
+  public getCommand(): String {
     return this.command;
   }
-  protected getArgs(): String[] {
+  public getArgs(): String[] {
     return this.args;
   }
-  protected getPerm(): Permissions {
+  public getPerm(): number {
     return this.perm;
   }
 

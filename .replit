@@ -1,2 +1,2 @@
 language = "node"
-run = "node Index.js"
+run = "npx ts-node Index.ts"
