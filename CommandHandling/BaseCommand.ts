@@ -1,9 +1,9 @@
-import {Permissions} from 'discord.js'
+import {Permissions, GuildMember} from 'discord.js'
 
 export default abstract class BaseCommand {
   private command: String;
   private args: String[];
-  private perm: String;
+  private perm: Permissions;
 
   constructor(command: String, args: String[], perm: String) {
     this.command = command;
@@ -17,9 +17,9 @@ export default abstract class BaseCommand {
   protected getArgs(): String[] {
     return this.args;
   }
-  protected getPerm(): String {
+  protected getPerm(): Permissions {
     return this.perm;
   }
 
-  public abstract execute(): void;
+  public abstract execute(member: GuildMember): void;
 }

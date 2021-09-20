@@ -1,14 +1,18 @@
 import BaseCommand from "../BaseCommand"
 import Lib from "../Lib"
 
+import {Permissions, GuildMember} from 'discord.js'
 
-class ShutdownCommand extends BaseCommand {
+
+export class ShutdownCommand extends BaseCommand {
 constructor() {
-    super('shutdown', ['', ''], 'ADMINISTRATOR'); 
+    super('shutdown', ['', ''], Permissions.FLAGS.ADMINISTRATOR); 
   }
 
-  execute(): void {
+  execute(member: GuildMember): void {
     var lib = new Lib();
-    lib.getUtility().getClient().destroy();
+    
+    if (member.has(this.getPerm()))
+      lib.getUtility().getClient().destroy();
   }
 }
