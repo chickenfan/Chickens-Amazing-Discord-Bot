@@ -1,5 +1,6 @@
 import BaseCommand from "./BaseCommand"
 import {ShutdownCommand} from "./Commands/ShutdownCommand"
+import {HelloCommand} from "./Commands/HelloCommand"
 
 export default class CommandManager {
   private commands: Array<BaseCommand>;
@@ -14,5 +15,6 @@ export default class CommandManager {
 
   constructor() {
     this.commands  = [new ShutdownCommand()];
+    this.addCommand(new HelloCommand());
   }
 }
