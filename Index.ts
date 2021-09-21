@@ -19,7 +19,7 @@ client.on('ready', () => {
 
 client.on('message', msg => {
   cmdManager.getCommands().forEach(cmd => {
-    if(msg.toString() == cmd.getCommand())
+    if(msg.toString() == cmd.getCommand(true))
       cmd.execute(msg.member as GuildMember);
   });
 });

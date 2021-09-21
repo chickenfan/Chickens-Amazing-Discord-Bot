@@ -11,8 +11,11 @@ export default abstract class BaseCommand {
     this.perm = perm;
   }
 
-  public getCommand(): String {
-    return this.command;
+  public getCommand(withPrefix: boolean): String {
+    if(withPrefix) 
+      return '!' + this.command;
+    else 
+      return this.command;
   }
   public getArgs(): String[] {
     return this.args;
